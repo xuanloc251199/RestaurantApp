@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+
+    //ip 172.16.1.181 192.168.43.124
+
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">192.168.43.124</domain>
+    </domain-config>
+
+</network-security-config>

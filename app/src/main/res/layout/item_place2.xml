@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardViewProduct_id"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/dp_5"
+    app:cardCornerRadius="@dimen/dp_10"
+    app:cardElevation="@dimen/dp_5">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/img_product_id"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_250"
+            android:scaleType="centerCrop"
+            android:src="@drawable/faifobuffer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/RGBA_gray"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/img_product_id">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/info_place2_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_10">
+
+                <TextView
+                    android:id="@+id/name_place2_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@id/info_place2_id"
+                    app:layout_constraintBottom_toBottomOf="@id/info_place2_id"
+                    android:text="@string/nameProduct"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/sp_25"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/star_product_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_5"
+                    app:layout_constraintEnd_toStartOf="@id/imgStar_id"
+                    app:layout_constraintBottom_toBottomOf="@id/info_place2_id"
+                    android:text="@string/evaluate"
+                    android:textColor="@color/colorPrice"
+                    android:textSize="@dimen/sp_18"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:id="@+id/imgStar_id"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    app:layout_constraintEnd_toEndOf="@id/info_place2_id"
+                    app:layout_constraintBottom_toBottomOf="@id/info_place2_id"
+                    android:src="@drawable/ic_yellow_star"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/prod_name_place_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_10"
+                android:layout_marginVertical="@dimen/dp_5"
+                android:text="@string/namePlace"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

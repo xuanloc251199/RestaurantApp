@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.view.DetailPlaceActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:ignore="ExtraText">
+
+        //Title
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_back_id"
+                android:background="@drawable/ic_back_white"
+                android:layout_gravity="center"
+                android:layout_width="@dimen/dp_25"
+                android:layout_height="@dimen/dp_25"
+                android:layout_marginStart="@dimen/dp_10"/>
+
+            <TextView
+                android:id="@+id/titlePlace_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/caviardreams"
+                android:gravity="center"
+                android:text="@string/namePlace"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/sp_20" />
+        </LinearLayout>
+
+<!--        //Menu-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/dp_50"-->
+<!--            android:background="@color/colorPrimaryDark" />-->
+
+        //Introduce
+
+        <include android:id="@+id/elementInfoIntroPlaces"
+            layout="@layout/element_detail_intro_place"/>
+
+        //Activity Time
+
+        <include android:id="@+id/elementInfoActivityTime"
+            layout="@layout/element_detail_activity_time"/>
+
+        //Information
+
+        <include android:id="@+id/elementInformationPlaces"
+            layout="@layout/element_detail_places"/>
+
+        //Menu Products
+
+        <include android:id="@+id/elementInfoMenu"
+            layout="@layout/element_detail_products"/>
+
+        //Nearby Places
+
+        <include android:id="@+id/elementInfoNearbyPlace"
+            layout="@layout/element_detail_nearby"/>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

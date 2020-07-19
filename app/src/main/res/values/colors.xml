@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#85001F</color>
+    <color name="colorPrimaryDark">#630118</color>
+    <color name="colorAccent">#D8211B</color>
+    <color name="colorNull">#00000000</color>
+    <color name="colorIcons">#7C7F81</color>
+    <color name="colorPrimaryText">#1E1E1E</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorButton">#AFAFAF</color>
+    <color name="colorPrimaryLight">#CA7474</color>
+    <color name="colorBackground">#F4F7F7</color>
+    <color name="dark_gray">#383a4b</color>
+    <color name="light_gray">#7f838d</color>
+    <color name="snow_white">#f9f9f9</color>
+    <color name="colorRed">#FE1212</color>
+    <color name="colorGreen">#17C133</color>
+    <color name="colorBlue">#3300FF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorStarStand">#F8BF1C</color>
+    <color name="colorButtonCmt">#F1F2F6</color>
+    <color name="RGBA_gray">#80000000</color>
+    <color name="colorPrice">#FFEB3B</color>
+</resources>

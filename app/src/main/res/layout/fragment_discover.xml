@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/dp_60"
+    tools:context=".discover.view.DiscoverFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:id="@+id/title_discover_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/caviardreams"
+                android:gravity="center"
+                android:text="@string/discover"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/sp_20" />
+        </LinearLayout>
+
+        <include android:id="@+id/elementDisNearMePlaces"
+            layout="@layout/element_discover_near_me"/>
+
+        <include android:id="@+id/elementDisNewPlaces"
+            layout="@layout/element_discover_new_places"/>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

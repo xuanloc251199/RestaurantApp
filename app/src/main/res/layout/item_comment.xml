@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_10"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        //Avata
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avt_cmt_id"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:src="@mipmap/ic_launcher" />
+
+        //Comment
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            //Content Comment
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp_5"
+                app:cardBackgroundColor="@color/colorButtonCmt"
+                app:cardCornerRadius="@dimen/dp_10">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_10"
+                    android:layout_marginVertical="@dimen/dp_5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/showName_cmt_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="left"
+                        android:text="@string/showName"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="@dimen/sp_14"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/content_cmt_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="left"
+                        android:text="@string/contentCmt"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="@dimen/sp_14" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            //Status Comment
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                //Thời gian Cmt
+
+                <TextView
+                    android:id="@+id/time_cmt_id"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginHorizontal="@dimen/dp_10"
+                    android:text="@string/timeCmt"
+                    android:textColor="@color/dark_gray"/>
+
+                //Lượt Thích
+
+                <ImageView
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_gravity="bottom"
+                    android:layout_marginHorizontal="@dimen/dp_5"
+                    android:src="@drawable/ic_like"/>
+                <TextView
+                    android:id="@+id/like_cmt_id"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginEnd="@dimen/dp_10"
+                    android:text="@string/likeCmt"
+                    android:textColor="@color/dark_gray"/>
+
+                //Lượt Trả Lời
+
+                <ImageView
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_gravity="bottom"
+                    android:layout_marginHorizontal="@dimen/dp_5"
+                    android:src="@drawable/ic_reply"/>
+                <TextView
+                    android:id="@+id/reply_cmt_id"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:text="@string/replyCmt"
+                    android:textColor="@color/dark_gray"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

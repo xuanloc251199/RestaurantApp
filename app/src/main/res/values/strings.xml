@@ -1,0 +1,111 @@
+<resources>
+
+
+    //Login
+    <string name="new_account">Tạo Tài Khoản</string>
+    <string name="sing_in">Đăng Nhập</string>
+    <string name="password">MẬT KHẨU</string>
+    <string name="email_domain_com">email@gmail.com</string>
+    <string name="username">TÊN ĐĂNG NHẬP</string>
+
+
+    <string name="facebook_app_id">802221453930394</string>
+    <string name="fb_login_protocol_scheme">fb802221453930394</string>
+
+
+    //Home
+    <string name="app_name">DiDi</string>
+    <string name="search">Tìm Kiếm...</string>
+    <string name="category">Danh mục</string>
+    <string name="featured">Nổi bật</string>
+    <string name="discover">Khám phá</string>
+    <string name="title">Title</string>
+    <string name="address">Địa Chỉ</string>
+
+    //Category
+    <string name="food">Món ăn no</string>
+    <string name="drink">Nước uống</string>
+    <string name="nameProduct">Tên Sản Phẩm</string>
+    <string name="dessert">Tráng miệng</string>
+    <string name="fast_food">Đồ ăn nhanh</string>
+    <string name="more">Thêm</string>
+
+    //Navigation Bar
+    <string name="home_nav">Trang chủ</string>
+    <string name="bookmark_nav">Đã lưu</string>
+    <string name="bill_nav">Đơn hàng</string>
+    <string name="notification_nav">Thông báo</string>
+    <string name="account_nav">Tài khoản</string>
+
+    //Account Page
+    <string name="showName">Tên tài khoản</string>
+    <string name="pay_ap">Thanh toán</string>
+    <string name="history_ap">Lịch sử</string>
+    <string name="bill_ap">Hóa đơn</string>
+    <string name="voucher_ap">Voucher</string>
+    <string name="letter_ap">Góp ý</string>
+    <string name="invite_ap">Mời bạn bè</string>
+    <string name="settings_ap">Cài đặt</string>
+    <string name="logout_ap">Đăng xuất</string>
+
+    //Menu Bar Bookmark
+    <string name="all_bookmark">Tất cả</string>
+    <string name="place_bookmark">Địa điểm</string>
+    <string name="posts_bookmark">Bài viết</string>
+    <string name="picture_bookmark">Hình ảnh</string>
+
+    //Fragment Saved
+    <string name="title_recently">Gần đây nhất</string>
+    <string name="title_favorite">Yêu thích</string>
+
+    //Information Place
+    <string name="namePlace">Tên Địa Điểm</string>
+    <string name="showAllInfo">Xem tất cả thông tin</string>
+    <string name="contact">Liên hệ</string>
+    <string name="showMenu">Xem thực đơn</string>
+    <string name="desPlace">Mô tả</string>
+    <string name="statusPlace">Trạng thái</string>
+    <string name="timePlace">Giờ Mở - Giờ Đóng</string>
+    <string name="inforPlace">Thông tin</string>
+
+    //Evaluate Bottom Navigation
+    <string name="evaluate">Đánh giá</string>
+    <string name="amountEvaluate">Số lượng</string>
+    <string name="totalComment">Tổng bình luận</string>
+    <string name="mediumScore">Điểm trung bình</string>
+    <string name="generalEvaluate">Đánh giá chung</string>
+    <string name="great">Tuyệt vời</string>
+    <string name="well">Khá tốt</string>
+    <string name="medium">Trung bình</string>
+    <string name="bad">Kém</string>
+
+    //Comment
+
+    <string name="contentCmt">Nội dung bình luận</string>
+    <string name="timeCmt">3 tháng</string>
+    <string name="likeCmt">Thích</string>
+    <string name="replyCmt">Trả lời</string>
+    <string name="showAllCmt">Xem tất cả bình luận</string>
+
+    //Nearby Place
+    <string name="titleNearbyPlace">Địa điểm lân cận</string>
+
+    //Descover
+    <string name="titleNearMe">Gần tôi</string>
+    <string name="titleNewsPlaces">Mới nhất</string>
+    <string name="filter">Lọc</string>
+
+    <string name="rate">Rate</string>
+    <string name="introduce_food">Bạn muốn ăn gì ?</string>
+    <string name="priceProduct">Giá</string>
+    <string name="timeOpen">Open</string>
+    <string name="timeClose">Close</string>
+    <string name="introduce_drink">Bạn muốn uống gì ?</string>
+    <string name="introduce_fast_food">Bạn muốn ăn vặt ?</string>
+
+
+    <string name="ip1">172.16.1.181</string>
+    <string name="ip2">192.168.43.124</string>
+    <string name="menu_of_place">Thực đơn</string>
+
+</resources>

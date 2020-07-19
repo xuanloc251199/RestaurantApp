@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    app:cnb_unselectedColor = "@color/colorWhite"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/all_nav"
+        android:icon="@drawable/ic_all_bar"
+        app:cnb_backgroundColor = "@color/colorPrimaryLight"
+        app:cnb_textColor = "@color/colorWhite"
+        app:cnb_iconColor = "@color/snow_white"
+        android:title="@string/all_bookmark"/>
+
+    <item
+        android:id="@+id/place_nav"
+        android:icon="@drawable/ic_place_bar"
+        app:cnb_backgroundColor = "@color/colorPrimaryLight"
+        app:cnb_iconColor = "@color/snow_white"
+        app:cnb_textColor = "@color/colorWhite"
+        android:title="@string/place_bookmark"/>
+    <item
+        android:id="@+id/post_nav"
+        android:icon="@drawable/ic_post_bar"
+        app:cnb_backgroundColor = "@color/colorPrimaryLight"
+        app:cnb_iconColor = "@color/snow_white"
+        app:cnb_textColor = "@color/colorWhite"
+        android:title="@string/posts_bookmark"/>
+    <item
+        android:id="@+id/picture_nav"
+        android:icon="@drawable/ic_picture_bar"
+        app:cnb_backgroundColor = "@color/colorPrimaryLight"
+        app:cnb_iconColor = "@color/snow_white"
+        app:cnb_textColor = "@color/colorWhite"
+        android:title="@string/picture_bookmark"/>
+
+</menu>
