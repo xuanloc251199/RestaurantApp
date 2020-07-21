@@ -3,6 +3,9 @@
     package="com.example.restaurant_food_app">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
 
     <application
         android:allowBackup="true"
@@ -14,10 +17,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key"/>
+
+
         <activity android:name=".category.view.FastFoodsActivity"></activity>
         <activity android:name=".category.view.DrinksActivity" />
         <activity android:name=".category.view.FoodActivity" />
-        <activity android:name=".home.view.MenuProducts" />
         <activity android:name=".home.view.ItemCategoryActivity" />
         <activity android:name=".home.view.DetailPlaceActivity" />
         <activity android:name=".main.NavigationBar" />

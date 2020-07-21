@@ -13,7 +13,7 @@ public class TaskFoods extends AsyncTask<String,String,String> {
 
     // 172.16.1.181  192.168.43.124
 
-    private static final String BASE_URL = "http://192.168.43.124/webproject/public/APImonan";
+    private static final String BASE_URL = "http://192.168.0.110/webproject/public/APImonan";
     private NetworkResponseListener networkResponseListener;
 
     public TaskFoods(NetworkResponseListener networkResponseListener){

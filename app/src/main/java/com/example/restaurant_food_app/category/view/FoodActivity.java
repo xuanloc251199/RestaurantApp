@@ -134,7 +134,7 @@ public class FoodActivity extends AppCompatActivity implements NetworkResponseLi
         try {
             JSONArray jsonArray = new JSONArray(data);
 
-            String imgPlaceUrl = "http://192.168.43.124/webproject/public/ANHDD/";
+            String imgPlaceUrl = "http://192.168.0.110/webproject/public/ANHDD/";
 
             for (int i = 0; i < jsonArray.length(); i++) {
 
@@ -151,9 +151,10 @@ public class FoodActivity extends AppCompatActivity implements NetworkResponseLi
                                 jsonObject.getString("open"),
                                 jsonObject.getString("close"),
                                 imgPlaceUrl + jsonObject.getString("avt_diadiem"),
-                                jsonObject.getString("bando"),
-                                (float) jsonObject.getDouble("danhgia"),
-                                jsonObject.getString("theloai")
+                                jsonObject.getDouble("danhgia"),
+                                jsonObject.getString("theloai"),
+                                jsonObject.getDouble("x"),
+                                jsonObject.getDouble("y")
 
                         )
                 );

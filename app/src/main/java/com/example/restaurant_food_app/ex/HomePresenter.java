@@ -4,7 +4,7 @@
 //
 //import com.example.restaurant_food_app.home.Utils;
 //import com.example.restaurant_food_app.home.api.HomeView;
-//import com.example.restaurant_food_app.home.model.Category;
+//import com.example.restaurant_food_app.category.model.Category;
 //import com.example.restaurant_food_app.home.model.Places;
 //
 //

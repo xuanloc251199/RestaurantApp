@@ -88,9 +88,10 @@ public class Places2Adapter extends RecyclerView.Adapter<Places2Adapter.ViewHold
                 intent.putExtra("Open", places2.getOpen());
                 intent.putExtra("Close", places2.getClose());
                 intent.putExtra("Avt Place", places2.getAvtDiadiem());
-                intent.putExtra("Map", places2.getBando());
                 intent.putExtra("Evaluate", places2.getDanhgia());
                 intent.putExtra("Category", places2.getTheloai());
+                intent.putExtra("X", places2.getX());
+                intent.putExtra("Y", places2.getY());
 
                 //Star Activity
                 mContext.startActivity(intent);

@@ -22,6 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginVertical="@dimen/dp_5"
                 android:layout_weight="1"
                 android:orientation="vertical">
 

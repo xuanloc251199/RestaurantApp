@@ -1,8 +1,6 @@
 package com.example.restaurant_food_app.home.view;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,6 +26,13 @@ import com.example.restaurant_food_app.home.adapter.ProductsAdapter;
 import com.example.restaurant_food_app.home.model.Places;
 import com.example.restaurant_food_app.home.model.Products;
 import com.example.restaurant_food_app.main.NavigationBar;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,7 +41,12 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DetailPlaceActivity extends AppCompatActivity {
+public class DetailPlaceActivity extends AppCompatActivity implements OnMapReadyCallback{
+
+    SupportMapFragment mapFragment;
+    GoogleMap map;
+    LatLng myThere;
+    FusedLocationProviderClient client;
 
     //Json
     private JsonArrayRequest jsonArrayRequest;
@@ -54,6 +64,7 @@ public class DetailPlaceActivity extends AppCompatActivity {
             mContact, mTimeO, mTimeC;
     Button mButtonBack;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,8 +75,10 @@ public class DetailPlaceActivity extends AppCompatActivity {
 
         eventButton();
 
+        supportMapFragment();
 
         intentData();
+
 
 
 
@@ -79,7 +92,6 @@ public class DetailPlaceActivity extends AppCompatActivity {
 
         mRecyclerViewProduct = findViewById(R.id.recycler_products_id);
         mRecyclerViewNearby = findViewById(R.id.recycler_nearby_id);
-
 
 
         mTitlePlace = findViewById(R.id.titlePlace_id);
@@ -107,16 +119,6 @@ public class DetailPlaceActivity extends AppCompatActivity {
             }
         });
 
-
-//        mCvViewProduct.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(DetailPlaceActivity.this, MenuProducts.class);
-//                startActivity(intent);
-//            }
-//        });
-
-
     }
 
 
@@ -135,7 +137,6 @@ public class DetailPlaceActivity extends AppCompatActivity {
         String timeOpen = intent.getExtras().getString("Open");
         String timeClose = intent.getExtras().getString("Close");
         String image = intent.getExtras().getString("Avt Place");
-        String map = intent.getExtras().getString("Map");
         String evaluate = intent.getExtras().getString("Evaluate");
 
 
@@ -157,12 +158,14 @@ public class DetailPlaceActivity extends AppCompatActivity {
         // set image using Glide
         Glide.with(this).load(image).apply(requestOptions).into(mImagePlace);
 
+//        onMapReady(map, x, y);
 
-        String JSON_PRODUCT_URL = "http://192.168.43.124/webproject/public/APIsanpham/" + idPlace;
-        String JSON_NEARBY_URL = "http://192.168.43.124/webproject/public/APIdiadiemlancan/" + location;
+        String JSON_PRODUCT_URL = "http://192.168.0.110/webproject/public/APIsanpham/" + idPlace;
+        String JSON_NEARBY_URL = "http://192.168.0.110/webproject/public/APIdiadiemlancan/" + location;
 
         initViewProducts(JSON_PRODUCT_URL);
         initViewNearby(JSON_NEARBY_URL);
+
 
     }
 
@@ -173,24 +176,23 @@ public class DetailPlaceActivity extends AppCompatActivity {
             @Override
             public void onResponse(JSONArray response) {
 
-                JSONObject jsonObject  = null ;
+                JSONObject jsonObject = null;
 
-                for (int i = 0 ; i < response.length(); i++ ) {
+                for (int i = 0; i < response.length(); i++) {
 
                     try {
 
-                        String imgUrl = "http://192.168.43.124/webproject/public/ANHSP/";
+                        String imgUrl = "http://192.168.0.110/webproject/public/ANHSP/";
 
-                        jsonObject = response.getJSONObject(i) ;
+                        jsonObject = response.getJSONObject(i);
                         Products products = new Products();
 
 
-                            products.setNameSanpham(jsonObject.getString("name_sanpham"));
-                            products.setGia(jsonObject.getInt("gia"));
-                            products.setAvtSanpham(imgUrl + jsonObject.getString("avt_sanpham"));
+                        products.setNameSanpham(jsonObject.getString("name_sanpham"));
+                        products.setGia(jsonObject.getInt("gia"));
+                        products.setAvtSanpham(imgUrl + jsonObject.getString("avt_sanpham"));
 
-                            lstProduct.add(products);
-
+                        lstProduct.add(products);
 
 
                     } catch (JSONException e) {
@@ -206,13 +208,13 @@ public class DetailPlaceActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(DetailPlaceActivity.this, "Lỗi",Toast.LENGTH_SHORT);
+                Toast.makeText(DetailPlaceActivity.this, "Lỗi", Toast.LENGTH_SHORT);
             }
         });
 
 
         requestQueue = Volley.newRequestQueue(DetailPlaceActivity.this);
-        requestQueue.add(jsonArrayRequest) ;
+        requestQueue.add(jsonArrayRequest);
 
 
     }
@@ -223,15 +225,15 @@ public class DetailPlaceActivity extends AppCompatActivity {
             @Override
             public void onResponse(JSONArray response) {
 
-                JSONObject jsonObject  = null ;
+                JSONObject jsonObject = null;
 
-                for (int i = 0 ; i < response.length(); i++ ) {
+                for (int i = 0; i < response.length(); i++) {
 
                     try {
 
-                        String imgUrl = "http://192.168.43.124/webproject/public/ANHDD/";
+                        String imgUrl = "http://192.168.0.110/webproject/public/ANHDD/";
 
-                        jsonObject = response.getJSONObject(i) ;
+                        jsonObject = response.getJSONObject(i);
 
 
                         lstPlaces.add(
@@ -244,12 +246,12 @@ public class DetailPlaceActivity extends AppCompatActivity {
                                         jsonObject.getString("open"),
                                         jsonObject.getString("close"),
                                         imgUrl + jsonObject.getString("avt_diadiem"),
-                                        jsonObject.getString("bando"),
-                                        (float) jsonObject.getDouble("danhgia"),
-                                        jsonObject.getString("theloai")
+                                        jsonObject.getDouble("danhgia"),
+                                        jsonObject.getString("theloai"),
+                                        jsonObject.getDouble("x"),
+                                        jsonObject.getDouble("y")
                                 )
                         );
-
 
 
                     } catch (JSONException e) {
@@ -265,13 +267,13 @@ public class DetailPlaceActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(DetailPlaceActivity.this, "Lỗi",Toast.LENGTH_SHORT);
+                Toast.makeText(DetailPlaceActivity.this, "Lỗi", Toast.LENGTH_SHORT);
             }
         });
 
 
         requestQueue = Volley.newRequestQueue(DetailPlaceActivity.this);
-        requestQueue.add(jsonArrayRequest) ;
+        requestQueue.add(jsonArrayRequest);
 
 
     }
@@ -280,7 +282,7 @@ public class DetailPlaceActivity extends AppCompatActivity {
     private void setupProductRecycler(List<Products> lstProduct) {
 
 
-        ProductsAdapter productsAdapter = new ProductsAdapter(this,lstProduct) ;
+        ProductsAdapter productsAdapter = new ProductsAdapter(this, lstProduct);
         mRecyclerViewProduct.setLayoutManager(new LinearLayoutManager(DetailPlaceActivity.this,
                 RecyclerView.VERTICAL, false));
         mRecyclerViewProduct.setHasFixedSize(true);
@@ -291,11 +293,41 @@ public class DetailPlaceActivity extends AppCompatActivity {
     private void setupNearbyRecycler(List<Places> lstPlaces) {
 
 
-        PlacesAdapter placesAdapter = new PlacesAdapter(this,lstPlaces) ;
+        PlacesAdapter placesAdapter = new PlacesAdapter(this, lstPlaces);
         mRecyclerViewNearby.setLayoutManager(new LinearLayoutManager(DetailPlaceActivity.this,
                 RecyclerView.HORIZONTAL, false));
         mRecyclerViewNearby.setAdapter(placesAdapter);
 
     }
 
+
+    private void supportMapFragment() {
+        mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+
+        mapFragment.getMapAsync((OnMapReadyCallback) this);
+
+    }
+
+
+//    public void onMapReady(GoogleMap var1, Double x, Double y) {
+//        map = var1;
+//
+//        myThere = new LatLng(16.078663, 108.211634);
+//        map.addMarker(new MarkerOptions().position(myThere).title("Here"));
+//        map.moveCamera(CameraUpdateFactory.newLatLngZoom(myThere, 15));
+//    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        map = googleMap;
+
+        Intent intent = getIntent();
+        double x = intent.getExtras().getDouble("X");
+        double y = intent.getExtras().getDouble("Y");
+
+
+        myThere = new LatLng(x, y);
+        map.addMarker(new MarkerOptions().position(myThere).title("Here"));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(myThere, 17));
+    }
 }

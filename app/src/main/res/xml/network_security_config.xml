@@ -4,7 +4,7 @@
     //ip 172.16.1.181 192.168.43.124
 
     <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">192.168.43.124</domain>
+        <domain includeSubdomains="true">192.168.0.110</domain>
     </domain-config>
 
 </network-security-config>

@@ -17,7 +17,7 @@ import com.example.restaurant_food_app.R;
 import com.example.restaurant_food_app.api.TaskCategories;
 import com.example.restaurant_food_app.category.adapter.CategoryAdapter;
 import com.example.restaurant_food_app.api.NetworkResponseListener;
-import com.example.restaurant_food_app.home.model.Category;
+import com.example.restaurant_food_app.category.model.Category;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -88,7 +88,7 @@ public class CategoryFragment extends Fragment implements NetworkResponseListene
 
         try {
             JSONArray jsonArray = new JSONArray(data);
-            String imgCategoryUrl = "http://192.168.43.124/webproject/public/ANHTHELOAI/";
+            String imgCategoryUrl = "http://192.168.0.110/webproject/public/ANHTHELOAI/";
 
             for (int i = 0; i < jsonArray.length(); i++) {
 

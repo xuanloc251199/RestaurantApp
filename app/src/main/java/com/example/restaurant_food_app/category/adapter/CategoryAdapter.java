@@ -18,7 +18,7 @@ import com.example.restaurant_food_app.category.view.DrinksActivity;
 import com.example.restaurant_food_app.category.view.FastFoodsActivity;
 import com.example.restaurant_food_app.category.view.FoodActivity;
 import com.example.restaurant_food_app.R;
-import com.example.restaurant_food_app.home.model.Category;
+import com.example.restaurant_food_app.category.model.Category;
 
 import java.util.List;
 

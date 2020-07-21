@@ -27,6 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/dp_5"
                 android:layout_marginEnd="@dimen/dp_5"
+                android:layout_gravity="center"
                 android:orientation="vertical"
                 android:layout_weight="1">
                 <LinearLayout
@@ -121,6 +122,13 @@
             </LinearLayout>
 
             //Location
+
+            <fragment
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_200"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_weight="1"/>
 
 <!--            <RelativeLayout-->
 <!--                android:layout_width="match_parent"-->

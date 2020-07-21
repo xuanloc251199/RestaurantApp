@@ -13,7 +13,7 @@ public class TaskCategories extends AsyncTask<String,String,String> {
 
 //    172.16.1.181  192.168.43.124
 
-    private static final String BASE_URL = "http://192.168.43.124/webproject/public/APItheloai";
+    private static final String BASE_URL = "http://192.168.0.110/webproject/public/APItheloai";
     private NetworkResponseListener networkResponseListener;
 
     public TaskCategories(NetworkResponseListener networkResponseListener){

@@ -32,7 +32,7 @@ import java.util.List;
 
 public class ItemCategoryActivity extends AppCompatActivity {
 
-    private final String JSON_URL = "http://192.168.43.124/webproject/public/APIdiadiemMonan" ;
+    private final String JSON_URL = "http://192.168.0.110/webproject/public/APIdiadiemMonan" ;
     private JsonArrayRequest request ;
     private RequestQueue requestQueue ;
 
@@ -113,7 +113,7 @@ public class ItemCategoryActivity extends AppCompatActivity {
                     try {
                         jsonObject = response.getJSONObject(i) ;
 
-                        String imgPlaceUrl = "http://192.168.43.124/webproject/public/ANHDD/";
+                        String imgPlaceUrl = "http://192.168.0.110/webproject/public/ANHDD/";
 
                         Places places = new Places() ;
                         places.setIdDiadiem(jsonObject.getInt("id_diadiem"));
@@ -124,8 +124,9 @@ public class ItemCategoryActivity extends AppCompatActivity {
                         places.setOpen(jsonObject.getString("open"));
                         places.setClose(jsonObject.getString("close"));
                         places.setAvtDiadiem(imgPlaceUrl + jsonObject.getString("avt"));
-                        places.setBando(jsonObject.getString("bando"));
-                        places.setDanhgia((float) jsonObject.getInt("danhgia"));
+                        places.setDanhgia(jsonObject.getDouble("danhgia"));
+                        places.setDanhgia(jsonObject.getDouble("x"));
+                        places.setDanhgia(jsonObject.getDouble("y"));
                         placesFlowCategory.add(places);
 
                     } catch (JSONException e) {

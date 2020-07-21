@@ -133,7 +133,7 @@ public class HomeFragment extends Fragment implements NetworkResponseListener {
         //ip 172.16.1.181 192.168.43.124
         try {
             JSONArray jsonArray = new JSONArray(data);
-            String imgPlaceUrl = "http://192.168.43.124/webproject/public/ANHDD/";
+            String imgPlaceUrl = "http://192.168.0.110/webproject/public/ANHDD/";
 
             for (int i=0;i<jsonArray.length();i++){
 
@@ -149,9 +149,10 @@ public class HomeFragment extends Fragment implements NetworkResponseListener {
                                 jsonObject.getString("open"),
                                 jsonObject.getString("close"),
                                 imgPlaceUrl + jsonObject.getString("avt_diadiem"),
-                                jsonObject.getString("bando"),
-                                (float) jsonObject.getDouble("danhgia"),
-                                jsonObject.getString("theloai")
+                                jsonObject.getDouble("danhgia"),
+                                jsonObject.getString("theloai"),
+                                jsonObject.getDouble("x"),
+                                jsonObject.getDouble("y")
                         )
                 );
             }

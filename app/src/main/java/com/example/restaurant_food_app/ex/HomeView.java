@@ -1,6 +1,6 @@
 //package com.example.restaurant_food_app.home.api;
 //
-//import com.example.restaurant_food_app.home.model.Category;
+//import com.example.restaurant_food_app.category.model.Category;
 //import com.example.restaurant_food_app.home.model.Places;
 //
 //import java.util.List;

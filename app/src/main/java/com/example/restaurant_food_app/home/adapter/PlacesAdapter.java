@@ -85,9 +85,10 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.MyViewHold
                 intent.putExtra("Open", places.getOpen());
                 intent.putExtra("Close", places.getClose());
                 intent.putExtra("Avt Place", places.getAvtDiadiem());
-                intent.putExtra("Map", places.getBando());
                 intent.putExtra("Evaluate", places.getDanhgia());
                 intent.putExtra("Category", places.getTheloai());
+                intent.putExtra("X", places.getX());
+                intent.putExtra("Y", places.getY());
 
                 //Star Activity
                 mContext.startActivity(intent);

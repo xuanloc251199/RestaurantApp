@@ -31,39 +31,23 @@ public class Places {
     @SerializedName("avt_diadiem")
     @Expose
     private String avtDiadiem;
-    @SerializedName("bando")
-    @Expose
-    private String bando;
     @SerializedName("danhgia")
     @Expose
-    private Float danhgia;
+    private Double danhgia;
     @SerializedName("theloai")
     @Expose
     private String theloai;
+    @SerializedName("x")
+    @Expose
+    private Double x;
+    @SerializedName("y")
+    @Expose
+    private Double y;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
     public Places() {
     }
 
-    /**
-     *
-     * @param theloai
-     * @param diachi
-     * @param lienhe
-     * @param bando
-     * @param avtDiadiem
-     * @param ten
-     * @param danhgia
-     * @param close
-     * @param open
-     * @param idDiadiem
-     * @param vung
-     */
-    public Places(Integer idDiadiem, String ten, String diachi, String vung, String lienhe, String open, String close, String avtDiadiem, String bando, Float danhgia, String theloai) {
-        super();
+    public Places(Integer idDiadiem, String ten, String diachi, String vung, String lienhe, String open, String close, String avtDiadiem, Double danhgia, String theloai, Double x, Double y) {
         this.idDiadiem = idDiadiem;
         this.ten = ten;
         this.diachi = diachi;
@@ -72,9 +56,10 @@ public class Places {
         this.open = open;
         this.close = close;
         this.avtDiadiem = avtDiadiem;
-        this.bando = bando;
         this.danhgia = danhgia;
         this.theloai = theloai;
+        this.x = x;
+        this.y = y;
     }
 
     public Integer getIdDiadiem() {
@@ -141,19 +126,11 @@ public class Places {
         this.avtDiadiem = avtDiadiem;
     }
 
-    public String getBando() {
-        return bando;
-    }
-
-    public void setBando(String bando) {
-        this.bando = bando;
-    }
-
-    public Float getDanhgia() {
+    public Double getDanhgia() {
         return danhgia;
     }
 
-    public void setDanhgia(Float danhgia) {
+    public void setDanhgia(Double danhgia) {
         this.danhgia = danhgia;
     }
 
@@ -163,5 +140,21 @@ public class Places {
 
     public void setTheloai(String theloai) {
         this.theloai = theloai;
+    }
+
+    public Double getX() {
+        return x;
+    }
+
+    public void setX(Double x) {
+        this.x = x;
+    }
+
+    public Double getY() {
+        return y;
+    }
+
+    public void setY(Double y) {
+        this.y = y;
     }
 }

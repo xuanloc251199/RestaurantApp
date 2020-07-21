@@ -27,7 +27,7 @@
 //
 //public class MenuProducts extends AppCompatActivity {
 //
-//    private final String JSON_URL = "http://192.168.43.124/webproject/public/APIsanpham";
+//    private final String JSON_URL = "http://192.168.0.110/webproject/public/APIsanpham";
 //    private JsonArrayRequest jsonArrayRequest;
 //    private RequestQueue requestQueue;
 //    private List<Products> lstProduct = new ArrayList<>();
@@ -77,7 +77,7 @@
 //
 //                    try {
 //
-//                        String imgUrl = "http://192.168.43.124/webproject/public/ANHSP/";
+//                        String imgUrl = "http://192.168.0.110/webproject/public/ANHSP/";
 //
 //                        jsonObject = response.getJSONObject(i) ;
 //                        Products products = new Products() ;

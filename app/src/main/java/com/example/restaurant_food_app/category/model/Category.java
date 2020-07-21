@@ -1,4 +1,4 @@
-package com.example.restaurant_food_app.home.model;
+package com.example.restaurant_food_app.category.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
